@@ -176,17 +176,18 @@ h1 {
   font-size: var(--fs-sm);
   font-weight: 700;
   margin-bottom: var(--size-xs);
+  height: var(--size-regular);
 }
 
 .email-form .email-label {
   color: var(--clr-primary-dark);
 }
 
-.email-form .invalid-description {
+.email-form .error-msg {
   color: var(--clr-accent);
 }
 
-.email-form input[type="email"] {
+.email-input {
   width: 100%;
   padding: var(--size-regular) 0;
   padding-left: var(--size-md);
@@ -194,6 +195,12 @@ h1 {
   color: var(--clr-primary-dark);
   border-radius: var(--size-xs);
   background-color: transparent;
+}
+
+.invalid-input {
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+  background-color: rgba(255, 97, 85, 0.15);
 }
 
 /* Info Illustration */

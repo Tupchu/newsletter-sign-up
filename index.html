@@ -13,7 +13,7 @@
 <body>
 
   <!-- Sign-up form start -->
-  <div class="card">
+  <div class="card" id="newsletter-card">
     <div class="info">
       <h1>Stay updated!</h1>
       <p class="font-body size-md">Join 60,000+ product managers receiving monthly updates on:</p>
@@ -23,34 +23,34 @@
         <li>And much more!</li>
       </ul>
 
-      <form action="" class="email-form">
+      <form class="email-form" id="email-form" novalidate="novalidate">
         <div class="label-container">
           <label for="email" class="email-label">Email address</label>
-          <p class="invalid-description hidden">Valid email required</p>
+          <p class="error-msg hidden" id="error-msg">Valid email required</p>
         </div>
-        <input type="email" name="email" id="email" placeholder="email@company.com" required>
-        <button type="submit" class="btn">Subscribe to monthly newsletter</button>
+        <input type="email" class="email-input" name="email" id="email" placeholder="email@company.com">
+        <button type="submit" class="btn" id="email-btn">Subscribe to monthly newsletter</button>
       </form>
     </div>
 
     <div class="info-illustration">
       <img src="public/images/illustration-sign-up-mobile.svg" alt="Illustration for sign-up form" 
       srcset="public/images/illustration-sign-up-desktop.svg 1440w, 
-      public/images/illustration-sign-up-mobile.svg 600w">
+      public/images/illustration-sign-up-mobile.svg 800w">
     </div>
   </div>
   <!-- Sign-up form end -->
 
   <!-- Success message start -->
-  <div class="confirmation hidden">
+  <div class="confirmation hidden" id="newsletter-confirmation">
     <div class="confirmation-container">
       <img src="public/images/icon-list.svg" alt="">
       <h1>Thanks for subscribing!</h1>
-      <p class="font-body size-md">A confirmation email has been sent to <b>ash@loremcompany.com</b>. 
+      <p class="font-body size-md">A confirmation email has been sent to <b id="confirmation-email"></b>. 
         Please open it and click the button inside to confirm your subscription.</p>
     </div>
 
-    <button type="submit" class="btn">Dismiss message</button>
+    <button type="submit" class="btn" id="dismiss-btn">Dismiss message</button>
   </div>
   <!-- Success message end -->
 </body>
