@@ -1,11 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:wght@400;700&display=swap");
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
 
+  /* Colors */
+  --clr-primary-light: hsl(235, 18%, 26%);
+  --clr-primary-dark: hsl(234, 29%, 20%);
+  --clr-accent: hsl(4, 100%, 67%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-grey: hsl(231, 7%, 60%);
+
+  /* size */
+  --size-xs: 0.5rem;
+  --size-sm: 0.62rem;
+  --size-regular: 1rem;
+  --size-md: 1.5rem;
+  --size-lg: 2.5rem;
+  --size-xl: 4rem;
+
+  /* Fonts */
+  --font-family: "Roboto", sans-serif;
+  --fs-sm: 0.75rem;
+  --fs-md: 1rem;
+  --fs-lg: 2.5rem;
+  --fs-xl: 3.5rem;
+
+  /* Shadows */
+  --shadow: 0px 15px 60px 0px rgba(0, 0, 0, 0.25);
+  --shadow-accent: 0px 16px 32px 0px rgba(255, 97, 85, 0.5);
+}
 
 /* Resets */
 
@@ -28,17 +55,25 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  font-family: var(--font-family);
 }
 
 /* Set shorter line heights on headings and interactive elements */
-h1, h2, h3, h4,
-button, input, label {
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
   line-height: 1.1;
 }
 
 /* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
@@ -56,7 +91,133 @@ picture {
 }
 
 /* Inherit fonts for inputs and buttons */
-input, button,
-textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
+}
+
+/* Utilities */
+.font-body {
+  font-size: var(--fs-md);
+  color: var(--clr-primary-dark);
+}
+
+.size-md {
+  margin: var(--size-md) 0;
+}
+
+/* General */
+p {
+  max-width: 65ch;
+}
+
+h1 {
+  color: var(--clr-primary-dark);
+  font-size: var(--fs-lg);
+  margin-top: var(--size-lg);
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--size-xs);
+  width: 100%;
+  margin-top: var(--size-md);
+  margin-bottom: var(--size-lg);
+  padding: var(--size-regular) 3rem;
+  background-color: var(--clr-primary-dark);
+  color: var(--clr-white);
+}
+
+.btn:hover,
+.btn:active {
+  background: var(
+    --Gradient-1,
+    linear-gradient(204deg, #ff6a3a 0%, #ff527b 100%)
+  );
+  box-shadow: var(--shadow-accent);
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
+.info {
+  padding: 0 var(--size-md);
+}
+
+.info ul {
+  margin-bottom: var(--size-lg);
+}
+
+.info ul * + * {
+  margin: var(--size-sm) 0;
+}
+
+.info li {
+  display: flex;
+  list-style-type: none;
+}
+
+.info li::before {
+  content: url("public/images/icon-list.svg");
+  margin-right: var(--size-regular);
+}
+
+/* Form styles */
+.email-form .label-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  margin-bottom: var(--size-xs);
+}
+
+.email-form .email-label {
+  color: var(--clr-primary-dark);
+}
+
+.email-form .invalid-description {
+  color: var(--clr-accent);
+}
+
+.email-form input[type="email"] {
+  width: 100%;
+  padding: var(--size-regular) 0;
+  padding-left: var(--size-md);
+  border: 1px solid var(--clr-grey);
+  color: var(--clr-primary-dark);
+  border-radius: var(--size-xs);
+  background-color: transparent;
+}
+
+/* Info Illustration */
+.info-illustration img {
+  width: 100%;
+}
+
+/* Confirmation */
+.confirmation {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 var(--size-md);
+}
+
+.confirmation-container {
+  margin-top: 9rem;
+}
+
+.confirmation img {
+  width: 4rem;
+}
+
+.hidden {
+  display: none;
 }
