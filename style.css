@@ -13,6 +13,7 @@
   --clr-accent: hsl(4, 100%, 67%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-grey: hsl(231, 7%, 60%);
+  --clr-grey-light: hsla(234, 29%, 20%, 0.25);
 
   /* size */
   --size-xs: 0.5rem;
@@ -83,13 +84,6 @@ a:not([class]) {
   color: currentColor;
 }
 
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
 /* Inherit fonts for inputs and buttons */
 input,
 button,
@@ -155,18 +149,19 @@ h1 {
   margin-bottom: var(--size-lg);
 }
 
-.info ul * + * {
-  margin: var(--size-sm) 0;
-}
-
 .info li {
   display: flex;
   list-style-type: none;
 }
 
+.info ul li:nth-child(2) {
+  margin: var(--size-sm) 0;
+}
+
 .info li::before {
   content: url("public/images/icon-list.svg");
   margin-right: var(--size-regular);
+  display: flex;
 }
 
 /* Form styles */
@@ -191,7 +186,7 @@ h1 {
   width: 100%;
   padding: var(--size-regular) 0;
   padding-left: var(--size-md);
-  border: 1px solid var(--clr-grey);
+  border: 1px solid var(--clr-grey-light);
   color: var(--clr-primary-dark);
   border-radius: var(--size-xs);
   background-color: transparent;
@@ -206,6 +201,7 @@ h1 {
 /* Info Illustration */
 .info-illustration img {
   width: 100%;
+  height: 100%;
 }
 
 /* Confirmation */
@@ -227,4 +223,80 @@ h1 {
 
 .hidden {
   display: none;
+}
+
+/* media queries */
+@media (min-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-primary-light);
+  }
+
+  h1 {
+    font-size: var(--fs-xl);
+    margin: 0;
+  }
+
+  .btn {
+    margin-bottom: 0;
+  }
+
+  /* newsletter-card */
+  .card {
+    flex-direction: row;
+    justify-content: center;
+    width: 58rem;
+    min-height: 40rem;
+    margin: 0 var(--size-regular);
+    background-color: var(--clr-white);
+    border-radius: 2.25rem;
+    box-shadow: var(--shadow);
+  }
+
+  .info {
+    width: 55%;
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .info-illustration {
+    width: 45%;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+  }
+
+  .info-illustration img {
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+
+  /* confirmation */
+  .confirmation {
+    background-color: var(--clr-white);
+    border-radius: 2.25rem;
+    box-shadow: var(--shadow);
+    padding: 4rem;
+    padding-top: 3rem;
+    height: auto;
+    width: 31.5rem;
+  }
+
+  .confirmation-container {
+    margin-top: 0;
+  }
+
+  .confirmation img {
+    margin-bottom: var(--size-lg);
+  }
+
+  .confirmation p {
+    margin-bottom: var(--size-lg);
+  }
+
+  .confirmation .btn {
+    margin: 0;
+  }
 }

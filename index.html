@@ -1,57 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/public/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js"></script>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/public/images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="main.js"></script>
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
-</head>
-<body>
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <!-- Sign-up form start -->
+    <div class="card" id="newsletter-card">
+      <div class="info">
+        <h1>Stay updated!</h1>
+        <p class="font-body size-md">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="font-body">
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
 
-  <!-- Sign-up form start -->
-  <div class="card" id="newsletter-card">
-    <div class="info">
-      <h1>Stay updated!</h1>
-      <p class="font-body size-md">Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul class="font-body">
-        <li> Product discovery and building what matters</li>
-        <li>Measuring to ensure updates are a success</li>
-        <li>And much more!</li>
-      </ul>
+        <form class="email-form" id="email-form" novalidate="novalidate">
+          <div class="label-container">
+            <label for="email" class="email-label">Email address</label>
+            <p class="error-msg hidden" id="error-msg">Valid email required</p>
+          </div>
+          <input
+            type="email"
+            class="email-input"
+            name="email"
+            id="email"
+            placeholder="email@company.com"
+          />
+          <button type="submit" class="btn" id="email-btn">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </div>
 
-      <form class="email-form" id="email-form" novalidate="novalidate">
-        <div class="label-container">
-          <label for="email" class="email-label">Email address</label>
-          <p class="error-msg hidden" id="error-msg">Valid email required</p>
-        </div>
-        <input type="email" class="email-input" name="email" id="email" placeholder="email@company.com">
-        <button type="submit" class="btn" id="email-btn">Subscribe to monthly newsletter</button>
-      </form>
+      <div class="info-illustration">
+        <img
+          src="public/images/illustration-sign-up-mobile.svg"
+          alt="Illustration for sign-up form"
+          srcset="
+            public/images/illustration-sign-up-desktop.svg 800w,
+            public/images/illustration-sign-up-mobile.svg  799w
+          "
+        />
+      </div>
     </div>
+    <!-- Sign-up form end -->
 
-    <div class="info-illustration">
-      <img src="public/images/illustration-sign-up-mobile.svg" alt="Illustration for sign-up form" 
-      srcset="public/images/illustration-sign-up-desktop.svg 1440w, 
-      public/images/illustration-sign-up-mobile.svg 800w">
+    <!-- Success message start -->
+    <div class="confirmation hidden" id="newsletter-confirmation">
+      <div class="confirmation-container">
+        <img src="public/images/icon-list.svg" alt="" />
+        <h1>Thanks for subscribing!</h1>
+        <p class="font-body size-md">
+          A confirmation email has been sent to <b id="confirmation-email"></b>.
+          Please open it and click the button inside to confirm your
+          subscription.
+        </p>
+      </div>
+
+      <button type="submit" class="btn" id="dismiss-btn">
+        Dismiss message
+      </button>
     </div>
-  </div>
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-  <div class="confirmation hidden" id="newsletter-confirmation">
-    <div class="confirmation-container">
-      <img src="public/images/icon-list.svg" alt="">
-      <h1>Thanks for subscribing!</h1>
-      <p class="font-body size-md">A confirmation email has been sent to <b id="confirmation-email"></b>. 
-        Please open it and click the button inside to confirm your subscription.</p>
-    </div>
-
-    <button type="submit" class="btn" id="dismiss-btn">Dismiss message</button>
-  </div>
-  <!-- Success message end -->
-</body>
+    <!-- Success message end -->
+  </body>
 </html>
