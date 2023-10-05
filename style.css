@@ -256,7 +256,7 @@ h1 {
     flex-direction: row;
     justify-content: center;
     width: 58rem;
-    min-height: 40rem;
+    min-height: 40.0625rem;
     margin: 0 var(--spacing-regular);
     background-color: var(--clr-white);
     border-radius: var(--radius-lg);
@@ -265,7 +265,9 @@ h1 {
 
   .info {
     width: 55%;
-    padding: 6rem var(--spacing-xl);
+    padding: 0 var(--spacing-xl);
+    padding-top: 6.06rem;
+    padding-bottom: 6.13rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
