@@ -49,14 +49,8 @@
       </div>
 
       <div class="info-illustration">
-        <img
-          src="public/images/illustration-sign-up-mobile.svg"
-          alt="Illustration for sign-up form"
-          srcset="
-            public/images/illustration-sign-up-desktop.svg 800w,
-            public/images/illustration-sign-up-mobile.svg  799w
-          "
-        />
+        <img src="public/images/illustration-sign-up-mobile.svg" alt="Illustration for sign-up form" class="mobile-illustration">
+        <img src="public/images/illustration-sign-up-desktop.svg" alt="Illustration for sign-up form" class="desktop-illustration">
       </div>
     </div>
     <!-- Sign-up form end -->
@@ -64,7 +58,7 @@
     <!-- Success message start -->
     <div class="confirmation hidden" id="newsletter-confirmation">
       <div class="confirmation-container">
-        <img src="public/images/icon-list.svg" alt="" />
+        <img src="public/images/icon-list.svg" alt="check mark icon showing valid email submission" />
         <h1>Thanks for subscribing!</h1>
         <p class="font-body size-md">
           A confirmation email has been sent to <b id="confirmation-email"></b>.
